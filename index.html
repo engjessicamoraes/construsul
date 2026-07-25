@@ -176,7 +176,7 @@
   .prize-card .body{padding:26px 28px}
   .prize-emoji{font-size:60px;line-height:1;margin-bottom:6px;display:inline-block;animation:floatY 2.4s ease-in-out infinite}
   .prize-card h3{font-size:13px;color:var(--muted);font-weight:500}
-  .prize-name{font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:700;font-size:29px;color:var(--green-ink);margin-bottom:8px}
+  .prize-name{font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:700;font-size:29px;color:var(--green-ink);margin-bottom:20px}
   .save-status{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.04em;color:var(--muted);margin-bottom:18px;min-height:14px}
 
   /* ---------- PAINEL DO OPERADOR ---------- */
@@ -324,7 +324,6 @@
         <div class="prize-emoji" id="prizeEmoji"></div>
         <h3>Você ganhou</h3>
         <div class="prize-name" id="prizeName">—</div>
-        <div class="save-status mono" id="saveStatus"></div>
         <button class="btn" id="nextPerson">Próximo participante</button>
       </div>
     </div>
@@ -477,9 +476,8 @@
     if(currentLead) currentLead.brinde=dispName;
     document.getElementById("prizeEmoji").innerHTML=icon(dispIcon,58,"#004642");
     document.getElementById("prizeName").textContent=dispName;
-    var st=document.getElementById("saveStatus"); st.textContent="";
     confettiBurst(); overlay.classList.add("show"); renderStock();
-    if(currentLead){ saveToCloud(currentLead).then(function(w){ st.textContent=(w==="cloud")?"✓ salvo na nuvem":"✓ registrado na sessão"; }); }
+    if(currentLead){ saveToCloud(currentLead); }
   }
 
   function backToForm(){
