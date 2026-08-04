@@ -69,7 +69,7 @@
   .note b{color:var(--green)}
 
   /* ---------- CARTÕES DE BRINDE ---------- */
-  .prizes{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:24px;animation:fadeUp .6s .24s var(--e) both}
+  .prizes{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:11px;margin-top:24px;animation:fadeUp .6s .24s var(--e) both}
   .pz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 8px 13px;text-align:center;box-shadow:var(--sh-sm);
     transition:transform .18s var(--e),box-shadow .18s}
   .pz:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
@@ -233,62 +233,34 @@
     <div class="hero">
       <div class="hero-copy">
         <span class="eyebrow">Conexões Engenharia · Construsul 2026</span>
-        <h1 class="title">Cadastre-se e gire a <span class="hl">roleta</span> de brindes</h1>
-        <p class="lead">Faça seu cadastro, gire a roleta e leve um brinde do SENGE-RS. Leva menos de um minuto.</p>
+        <h1 class="title">Digite seu CPF e gire a <span class="hl">roleta</span> de brindes</h1>
+        <p class="lead">Já se cadastrou? Informe seu CPF, gire a roleta e retire seu brinde do SENGE-RS. Cada CPF concorre uma única vez.</p>
         <div class="prizes">
-          <div class="pz"><div class="pz-ic" data-ic="copo" data-col="#004642"></div><b>Copo<br>Térmico</b></div>
-          <div class="pz"><div class="pz-ic" data-ic="mole" data-col="#EE6A15"></div><b>Moleskine</b></div>
-          <div class="pz"><div class="pz-ic" data-ic="lapis" data-col="#004642"></div><b>Lápis</b></div>
-          <div class="pz"><div class="pz-ic" data-ic="chave" data-col="#004642"></div><b>Chaveiro</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="copo" data-col="#004642"></div><b>Copo Térmico</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="polo" data-col="#EE6A15"></div><b>Camiseta Polo</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="camiseta" data-col="#004642"></div><b>Camiseta</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="bone" data-col="#EE6A15"></div><b>Boné Preto</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="caneta" data-col="#004642"></div><b>Caneta</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="caderno" data-col="#EE6A15"></div><b>Caderno</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="mole" data-col="#004642"></div><b>Moleskine</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="trena" data-col="#EE6A15"></div><b>Chaveiro Trena</b></div>
+          <div class="pz"><div class="pz-ic" data-ic="capacete" data-col="#004642"></div><b>Chaveiro Capacete</b></div>
         </div>
-        <div class="note"><span class="dot"></span><p>Com o cadastro, você entra para o <b>Conexões Engenharia</b>, o portal de vagas, oportunidades e negócios do SENGE-RS.</p></div>
+        <div class="note"><span class="dot"></span><p>O cadastro completo é feito à parte, no <b>Conexões Engenharia</b> — o portal de vagas, oportunidades e negócios do SENGE-RS. Aqui, basta o CPF para girar.</p></div>
       </div>
 
       <div class="panel">
           <div class="panel-in">
-            <div class="steps"><span class="step on">1 · Cadastro</span><span class="step">2 · Roleta</span></div>
-            <div class="panel-h">Seus dados</div>
-            <div class="panel-sub">Preencha para liberar a roleta.</div>
+            <div class="steps"><span class="step on">1 · CPF</span><span class="step">2 · Roleta</span></div>
+            <div class="panel-h">Informe seu CPF</div>
+            <div class="panel-sub">Já cadastrado? Digite o CPF para girar a roleta.</div>
 
-            <div class="field"><label for="nome">Nome completo</label>
-              <input id="nome" type="text" autocomplete="name" placeholder="Seu nome completo" />
-              <div class="err" id="err-nome">Informe seu nome completo.</div></div>
-            <div class="field"><label for="email">E-mail</label>
-              <input id="email" type="email" autocomplete="email" placeholder="voce@email.com" />
-              <div class="err" id="err-email">Informe um e-mail válido.</div></div>
-            <div class="field"><label for="whats">WhatsApp</label>
-              <input id="whats" type="tel" inputmode="numeric" placeholder="(51) 99999-9999" maxlength="15" />
-              <div class="err" id="err-whats">Informe um WhatsApp válido com DDD.</div></div>
-            <div class="field"><label for="prof">Profissão</label>
-              <input id="prof" type="text" list="profs" placeholder="Comece a digitar…" />
-              <datalist id="profs">
-                <option value="Engenheiro(a) Civil"></option><option value="Engenheiro(a) Eletricista"></option>
-                <option value="Engenheiro(a) Mecânico(a)"></option><option value="Engenheiro(a) de Produção"></option>
-                <option value="Engenheiro(a) Ambiental"></option><option value="Engenheiro(a) Químico(a)"></option>
-                <option value="Engenheiro(a) de Computação"></option><option value="Engenheiro(a) de Software"></option>
-                <option value="Engenheiro(a) Eletrônico(a)"></option><option value="Engenheiro(a) de Controle e Automação"></option>
-                <option value="Engenheiro(a) Mecatrônico(a)"></option><option value="Engenheiro(a) Agrônomo(a)"></option>
-                <option value="Engenheiro(a) Agrícola"></option><option value="Engenheiro(a) de Alimentos"></option>
-                <option value="Engenheiro(a) de Materiais"></option><option value="Engenheiro(a) Metalúrgico(a)"></option>
-                <option value="Engenheiro(a) de Minas"></option><option value="Engenheiro(a) de Petróleo"></option>
-                <option value="Engenheiro(a) Naval"></option><option value="Engenheiro(a) Sanitarista"></option>
-                <option value="Engenheiro(a) de Segurança do Trabalho"></option><option value="Engenheiro(a) de Telecomunicações"></option>
-                <option value="Engenheiro(a) Florestal"></option><option value="Engenheiro(a) Cartógrafo(a) / Agrimensor(a)"></option>
-                <option value="Engenheiro(a) Aeronáutico(a)"></option><option value="Engenheiro(a) Biomédico(a)"></option>
-                <option value="Engenheiro(a) de Energia"></option><option value="Engenheiro(a) de Recursos Hídricos"></option>
-                <option value="Engenheiro(a) de Transportes"></option><option value="Engenheiro(a) de Estruturas"></option>
-                <option value="Engenheiro(a) Geotécnico(a)"></option><option value="Engenheiro(a) Hidráulico(a)"></option>
-                <option value="Arquiteto(a) e Urbanista"></option><option value="Geólogo(a)"></option>
-                <option value="Técnico(a) em Edificações"></option><option value="Técnico(a) em Segurança do Trabalho"></option>
-                <option value="Técnico(a) (outros)"></option><option value="Tecnólogo(a)"></option>
-                <option value="Estudante de Engenharia"></option><option value="Estudante de Arquitetura"></option>
-                <option value="Estudante (outros cursos)"></option><option value="Professor(a) / Pesquisador(a)"></option>
-                <option value="Outra profissão"></option>
-              </datalist>
-              <div class="err" id="err-prof">Informe sua profissão.</div></div>
+            <div class="field"><label for="cpf">CPF</label>
+              <input id="cpf" type="tel" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14" />
+              <div class="err" id="err-cpf">Informe um CPF válido.</div></div>
 
-            <button class="btn" id="goWheel">Liberar roleta</button>
-            <p class="consent">Ao participar, você concorda em receber contato do Conexões Engenharia e do SENGE-RS sobre vagas, oportunidades e eventos.</p>
+            <button class="btn" id="goWheel">Verificar CPF</button>
+            <p class="consent">Cada participante retira um único brinde. Os dados seguem a política de privacidade do Conexões Engenharia / SENGE-RS.</p>
           </div>
         </div>
     </div>
@@ -329,11 +301,23 @@
     </div>
   </div>
 
+  <div class="overlay" id="already">
+    <div class="prize-card">
+      <div class="top" style="background:var(--orange)">Atenção</div>
+      <div class="body">
+        <div class="prize-emoji" id="alreadyIcon"></div>
+        <h3>Este CPF já retirou</h3>
+        <div class="prize-name" id="alreadyName">—</div>
+        <button class="btn" id="alreadyClose">Novo participante</button>
+      </div>
+    </div>
+  </div>
+
   <div class="admin" id="admin">
     <div class="admin-card">
       <div class="top"><b>Painel do operador</b><small>oculto ao público</small></div>
       <div class="admin-body">
-        <div class="admin-stat"><span>Cadastros nesta sessão</span><b id="admCount">0</b></div>
+        <div class="admin-stat"><span>CPFs verificados</span><b id="admCount">0</b></div>
         <div class="admin-stat"><span>Brindes entregues</span><b id="admGiven">0</b></div>
         <div class="admin-h">Estoque restante (edite se precisar)</div>
         <div id="stockList"></div>
@@ -347,33 +331,65 @@
 (function(){
   "use strict";
   var FIREBASE = { projectId:"roleta-construsul", apiKey:"AIzaSyDjiEsoaW7HGUS4kOlzMuv0EoWk4bK7u9g" };
-  function saveToCloud(lead){
-    if(!FIREBASE.projectId || !FIREBASE.apiKey) return Promise.resolve("local");
-    var url="https://firestore.googleapis.com/v1/projects/"+FIREBASE.projectId+"/databases/(default)/documents/cadastros?key="+FIREBASE.apiKey;
-    var payload={fields:{nome:{stringValue:lead.nome},email:{stringValue:lead.email},whatsapp:{stringValue:lead.whatsapp},
-      profissao:{stringValue:lead.profissao},brinde:{stringValue:lead.brinde},evento:{stringValue:"Construsul 2026"},criadoEm:{timestampValue:new Date().toISOString()}}};
-    return fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
-      .then(function(r){return r.ok?"cloud":"local";}).catch(function(){return "local";});
+  var COLL="brindes";                 // coleção no Firestore: um documento por CPF
+  var EVENTO="Construsul 2026";
+  var localWon={};                    // fallback em memória se o Firebase estiver off
+  function fbOn(){ return !!(FIREBASE.projectId && FIREBASE.apiKey); }
+  function fbUrl(path){ return "https://firestore.googleapis.com/v1/projects/"+FIREBASE.projectId+"/databases/(default)/documents/"+path+"?key="+FIREBASE.apiKey; }
+
+  // consulta se o CPF já retirou brinde -> {won, brinde, error}
+  function checkCPF(cpfD){
+    if(!fbOn()) return Promise.resolve({won: !!localWon[cpfD], brinde: localWon[cpfD]||""});
+    return fetch(fbUrl(COLL+"/"+cpfD)).then(function(r){
+      if(r.status===200) return r.json().then(function(d){ return {won:true, brinde:(d.fields&&d.fields.brinde&&d.fields.brinde.stringValue)||""}; });
+      if(r.status===404) return {won:false};
+      return {won:false, error:true};
+    }).catch(function(){ return {won:false, error:true}; });
+  }
+  // grava o brinde do CPF (documentId = CPF; cria um registro novo)
+  function writeBrinde(cpfD, brinde){
+    localWon[cpfD]=brinde;
+    if(!fbOn()) return Promise.resolve();
+    var payload={fields:{cpf:{stringValue:cpfD},brinde:{stringValue:brinde},evento:{stringValue:EVENTO},criadoEm:{timestampValue:new Date().toISOString()}}};
+    return fetch(fbUrl(COLL)+"&documentId="+cpfD,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)}).catch(function(){});
+  }
+  // validação de CPF (formato + dígitos verificadores)
+  function validCPF(c){
+    if(!/^\d{11}$/.test(c)) return false;
+    if(/^(\d)\1{10}$/.test(c)) return false;
+    var s=0,i,r;
+    for(i=0;i<9;i++) s+=parseInt(c.charAt(i),10)*(10-i);
+    r=(s*10)%11; if(r===10) r=0; if(r!==parseInt(c.charAt(9),10)) return false;
+    s=0; for(i=0;i<10;i++) s+=parseInt(c.charAt(i),10)*(11-i);
+    r=(s*10)%11; if(r===10) r=0; if(r!==parseInt(c.charAt(10),10)) return false;
+    return true;
   }
 
   var ICONS={
-    copo:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l-1 4H9L8 3Z"/><path d="M8.5 7h7l-1 12.6A1.6 1.6 0 0 1 12.9 21h-1.8a1.6 1.6 0 0 1-1.6-1.4L8.5 7Z"/><path d="M9 12.5h6"/></svg>',
+    copo:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h14l-1 7.6A1.8 1.8 0 0 1 16.2 19H7.8A1.8 1.8 0 0 1 6 17.6L5 10Z"/><path d="M4.5 10h15"/><path d="M8 6.8h8l.6 3.2H7.4L8 6.8Z"/></svg>',
+    polo:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4L12 6 15 4l4.5 3-2.4 3.2-1.6-1V20H7.5V9.2l-1.6 1L3.5 7 9 4Z"/><path d="M10 5.2 12 7l2-1.8"/><path d="M12 7v3.2"/></svg>',
+    camiseta:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 4a3.5 3.5 0 0 0 7 0l4 2.6-2.4 3.3-1.6-1V20H8.5V8.9l-1.6 1L4.5 6.6 8.5 4Z"/></svg>',
+    bone:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15a7 7 0 0 1 14 0"/><path d="M5 15h14"/><path d="M19 15h2.4a1 1 0 0 1 0 2.4H13"/></svg>',
+    caneta:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 5.5l3 3"/><path d="M6 18l9.5-9.5 3 3L9 21l-3.6.6L6 18Z"/><path d="M5.4 18.6l2 2"/></svg>',
+    caderno:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3.5" width="13" height="17" rx="1.4"/><path d="M9.5 3.5v17"/><path d="M4.2 6h4M4.2 9.2h4M4.2 12.4h4M4.2 15.6h4"/></svg>',
     mole:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="12" height="18" rx="1.6"/><path d="M14.5 3v18"/><path d="M17 7.5h1.6"/><path d="M17 11h1.6"/></svg>',
-    lapis:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19l1-4L16 5l3 3L9 18l-4 1Z"/><path d="M14 7l3 3"/><path d="M6 15l3 3"/></svg>',
     chave:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4.2"/><path d="M11 11l8.5 8.5"/><path d="M16.5 16.5l2-2"/><path d="M18.5 18.5l2-2"/></svg>',
     trena:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.5" width="13" height="11" rx="3"/><circle cx="8" cy="13" r="2.3"/><path d="M15.5 10.5H20l1.5 2v3.5"/><path d="M15.5 16.5H21"/></svg>',
-    capacete:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5a8 8 0 0 1 16 0"/><path d="M2.5 16.5h19"/><path d="M12 5.5V9"/><path d="M8.8 9V7.6"/><path d="M15.2 9V7.6"/></svg>'
+    capacete:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5a8 8 0 0 1 16 0"/><path d="M2.5 16.5h19"/><path d="M12 5.5V9"/><path d="M8.8 9V7.6"/><path d="M15.2 9V7.6"/></svg>',
+    check:'<svg viewBox="0 0 24 24" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.3 12.4l2.6 2.6 4.8-5.2"/></svg>'
   };
   function icon(key,size,color){ var c=color||"currentColor"; return '<span style="display:inline-flex;width:'+size+'px;height:'+size+'px;color:'+c+';vertical-align:middle">'+(ICONS[key]||"")+'</span>'; }
 
   var PRIZES = [
-    { name:"Copo Térmico", icon:"copo",  peso:1, estoque:50  },
-    { name:"Moleskine",    icon:"mole",  peso:2, estoque:80  },
-    { name:"Lápis",        icon:"lapis", peso:3, estoque:200 },
-    { name:"Chaveiro",     icon:"chave", peso:3, variants:[
-        { name:"Trena",    icon:"trena",    estoque:80 },
-        { name:"Capacete", icon:"capacete", estoque:70 }
-    ] }
+    { name:"Copo Térmico",        wl:"Copo",     icon:"copo",     peso:3,  estoque:64  },
+    { name:"Camiseta Polo Preta", wl:"Polo",     icon:"polo",     peso:4,  estoque:74  },
+    { name:"Camiseta",            wl:"Camiseta", icon:"camiseta", peso:7,  estoque:137 },
+    { name:"Boné Preto",          wl:"Boné",     icon:"bone",     peso:5,  estoque:90  },
+    { name:"Caneta",              wl:"Caneta",   icon:"caneta",   peso:5,  estoque:100 },
+    { name:"Caderno",             wl:"Caderno",  icon:"caderno",  peso:5,  estoque:100 },
+    { name:"Moleskine",           wl:"Moleskine",icon:"mole",     peso:5,  estoque:100 },
+    { name:"Chaveiro Trena",      wl:"Trena",    icon:"trena",    peso:10, estoque:200 },
+    { name:"Chaveiro Capacete",   wl:"Capacete", icon:"capacete", peso:10, estoque:200 }
   ];
   var COL_A="#EE6A15", COL_B="#FFFFFF", TXT_A="#FFFFFF", TXT_B="#00302C";
 
@@ -386,7 +402,7 @@
     var spin=document.getElementById("spin"), esg=document.getElementById("esgotado");
     if(avail.length===0){ wheel.style.background="#0a5a54"; order=[]; SEG=0; spin.style.display="none"; esg.style.display="block"; return; }
     spin.style.display=""; esg.style.display="none";
-    var target=avail.length===1?4:avail.length*2; order=[]; var k=0;
+    var target=avail.length<=4?(avail.length===1?4:avail.length*2):avail.length; order=[]; var k=0;
     while(order.length<target){ order.push(avail[k%avail.length]); k++; }
     SEG=360/order.length;
     var stops=[]; for(var i=0;i<order.length;i++){ stops.push(((i%2===0)?COL_A:COL_B)+" "+(i*SEG)+"deg "+((i+1)*SEG)+"deg"); }
@@ -396,7 +412,7 @@
       var p=PRIZES[order[j]], mid=j*SEG+SEG/2;
       var el=document.createElement("div"); el.className="seg-label"; el.style.color=(j%2===0)?TXT_A:TXT_B;
       el.style.transform="rotate("+mid+"deg) translate(0,"+(-d)+"px) rotate("+(-mid)+"deg) translate(-50%,-50%)";
-      el.innerHTML=icon(p.icon,icF)+'<span class="nm" style="font-size:'+nmF+'px">'+p.name+'</span>';
+      el.innerHTML=icon(p.icon,icF)+'<span class="nm" style="font-size:'+nmF+'px">'+(p.wl||p.name)+'</span>';
       labels.appendChild(el);
     }
   }
@@ -413,40 +429,48 @@
     }
   })();
 
-  var whats=document.getElementById("whats");
-  whats.addEventListener("input",function(){
-    var dg=whats.value.replace(/\D/g,"").slice(0,11), out="";
-    if(dg.length>0) out="("+dg.slice(0,2);
-    if(dg.length>=2) out+=") ";
-    if(dg.length>2) out+=dg.slice(2,7);
-    if(dg.length>=7) out+="-"+dg.slice(7,11);
-    whats.value=out;
+  var cpf=document.getElementById("cpf");
+  function cpfDigits(){ return cpf.value.replace(/\D/g,"").slice(0,11); }
+  cpf.addEventListener("input",function(){
+    var d=cpfDigits(), out="";
+    if(d.length>0) out=d.slice(0,3);
+    if(d.length>=4) out+="."+d.slice(3,6);
+    if(d.length>=7) out+="."+d.slice(6,9);
+    if(d.length>=10) out+="-"+d.slice(9,11);
+    cpf.value=out;
   });
 
-  function setErr(id,s){ document.getElementById(id).classList.toggle("invalid",s); document.getElementById("err-"+id).classList.toggle("show",s); }
-  function validate(){
-    var nome=document.getElementById("nome").value.trim(), email=document.getElementById("email").value.trim();
-    var wnum=whats.value.replace(/\D/g,""), prof=document.getElementById("prof").value.trim();
-    var okNome=nome.length>=3&&nome.indexOf(" ")>0, okEmail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), okWhats=wnum.length>=10, okProf=prof.length>=2;
-    setErr("nome",!okNome); setErr("email",!okEmail); setErr("whats",!okWhats); setErr("prof",!okProf);
-    if(okNome&&okEmail&&okWhats&&okProf) return {nome:nome,email:email,whatsapp:whats.value,profissao:prof};
-    return null;
-  }
-
-  var leads=[], given=0, currentLead=null;
-  var wheelScreen=document.getElementById("wheelScreen"), overlay=document.getElementById("overlay");
+  var leads=[], given=0, verif=0, currentCPF=null, currentCPFf="";
+  var wheelScreen=document.getElementById("wheelScreen"), overlay=document.getElementById("overlay"), already=document.getElementById("already");
   var spinBtn=document.getElementById("spin"), greet=document.getElementById("greet"), rotation=0, spinning=false;
+  var goBtn=document.getElementById("goWheel");
 
-  function goWheel(){
-    var data=validate(); if(!data) return;
-    data.brinde=""; data.horario=new Date().toLocaleString("pt-BR");
-    leads.push(data); currentLead=data; document.getElementById("admCount").textContent=leads.length;
-    greet.textContent="Boa sorte, "+data.nome.split(" ")[0]+"!";
+  function setErr(id,s){ document.getElementById(id).classList.toggle("invalid",s); document.getElementById("err-"+id).classList.toggle("show",s); }
+
+  function openWheel(digits, formatted){
+    currentCPF=digits; currentCPFf=formatted; greet.textContent="Boa sorte!";
     wheelScreen.classList.add("on");
     requestAnimationFrame(function(){ layoutWheel(); spinBtn.disabled=(available().length===0); });
   }
-  document.getElementById("goWheel").addEventListener("click",goWheel);
-  ["nome","email","whats","prof"].forEach(function(id){ document.getElementById(id).addEventListener("keydown",function(e){ if(e.key==="Enter") goWheel(); }); });
+  function showAlready(brinde){
+    document.getElementById("alreadyIcon").innerHTML=icon("check",56,"#0F7A3D");
+    document.getElementById("alreadyName").textContent=brinde||"Brinde já retirado";
+    already.classList.add("show");
+  }
+  function verify(){
+    var d=cpfDigits();
+    if(!validCPF(d)){ setErr("cpf",true); return; }
+    setErr("cpf",false);
+    verif++; document.getElementById("admCount").textContent=verif;
+    goBtn.disabled=true; goBtn.textContent="Verificando…";
+    checkCPF(d).then(function(res){
+      goBtn.disabled=false; goBtn.textContent="Verificar CPF";
+      if(res.won){ showAlready(res.brinde); }
+      else { openWheel(d, cpf.value); }
+    });
+  }
+  goBtn.addEventListener("click",verify);
+  cpf.addEventListener("keydown",function(e){ if(e.key==="Enter") verify(); });
 
   function pickAvailIndex(){
     var avail=available(), total=0, i; for(i=0;i<avail.length;i++) total+=PRIZES[avail[i]].peso;
@@ -473,20 +497,21 @@
       if(v){ v.estoque--; dispName=prize.name+" "+v.name; dispIcon=v.icon; }
     } else if(prize.estoque>0){ prize.estoque--; }
     given++; document.getElementById("admGiven").textContent=given;
-    if(currentLead) currentLead.brinde=dispName;
+    if(currentCPF){ leads.push({cpf:currentCPFf, brinde:dispName, horario:new Date().toLocaleString("pt-BR")}); }
     document.getElementById("prizeEmoji").innerHTML=icon(dispIcon,58,"#004642");
     document.getElementById("prizeName").textContent=dispName;
     confettiBurst(); overlay.classList.add("show"); renderStock();
-    if(currentLead){ saveToCloud(currentLead); }
+    if(currentCPF){ writeBrinde(currentCPF, dispName); }
   }
 
   function backToForm(){
-    overlay.classList.remove("show"); wheelScreen.classList.remove("on");
-    ["nome","email","whats","prof"].forEach(function(id){ document.getElementById(id).value=""; setErr(id,false); });
-    document.getElementById("nome").focus();
+    overlay.classList.remove("show"); already.classList.remove("show"); wheelScreen.classList.remove("on");
+    cpf.value=""; setErr("cpf",false); currentCPF=null;
+    cpf.focus();
   }
   document.getElementById("nextPerson").addEventListener("click",backToForm);
   document.getElementById("wsExit").addEventListener("click",backToForm);
+  document.getElementById("alreadyClose").addEventListener("click",backToForm);
 
   /* confete */
   function confettiBurst(){
@@ -528,7 +553,7 @@
     });
     document.getElementById("cloudTag").textContent=(FIREBASE.projectId&&FIREBASE.apiKey)?"Banco de dados: nuvem ativa ("+FIREBASE.projectId+")":"Banco de dados: apenas sessão (CSV) — Firebase não configurado";
   }
-  function openAdmin(){ document.getElementById("admCount").textContent=leads.length; document.getElementById("admGiven").textContent=given; renderStock(); admin.classList.add("show"); }
+  function openAdmin(){ document.getElementById("admCount").textContent=verif; document.getElementById("admGiven").textContent=given; renderStock(); admin.classList.add("show"); }
   function closeAdmin(){ admin.classList.remove("show"); }
   document.getElementById("admClose").addEventListener("click",closeAdmin);
   document.addEventListener("keydown",function(e){
@@ -539,9 +564,9 @@
   document.getElementById("brandTap").addEventListener("click",function(){ taps++; clearTimeout(tapT); tapT=setTimeout(function(){taps=0;},1600); if(taps>=5){ taps=0; openAdmin(); } });
 
   document.getElementById("admExport").addEventListener("click",function(){
-    if(!leads.length){ alert("Nenhum cadastro nesta sessão ainda."); return; }
-    var head=["Nome","E-mail","WhatsApp","Profissão","Brinde","Evento","Horário"];
-    var rows=leads.map(function(l){ return [l.nome,l.email,l.whatsapp,l.profissao,l.brinde,"Construsul 2026",l.horario].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"'; }).join(","); });
+    if(!leads.length){ alert("Nenhum brinde entregue nesta sessão ainda."); return; }
+    var head=["CPF","Brinde","Evento","Horário"];
+    var rows=leads.map(function(l){ return [l.cpf,l.brinde,"Construsul 2026",l.horario].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"'; }).join(","); });
     var csv="\uFEFF"+head.join(",")+"\n"+rows.join("\n");
     var blob=new Blob([csv],{type:"text/csv;charset=utf-8;"}), a=document.createElement("a");
     a.href=URL.createObjectURL(blob); a.download="cadastros-construsul-2026.csv"; a.click(); URL.revokeObjectURL(a.href);
