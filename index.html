@@ -69,13 +69,13 @@
   .note b{color:var(--green)}
 
   /* ---------- CARTÕES DE BRINDE ---------- */
-  .prizes{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:11px;margin-top:24px;animation:fadeUp .6s .24s var(--e) both}
+  .prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:24px;animation:fadeUp .6s .24s var(--e) both}
   .pz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 8px 13px;text-align:center;box-shadow:var(--sh-sm);
     transition:transform .18s var(--e),box-shadow .18s}
   .pz:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
   .pz-ic{width:48px;height:48px;margin:0 auto 10px;border-radius:50%;background:#F1F5F2;display:grid;place-items:center;font-size:23px}
   .pz b{display:block;font-family:"IBM Plex Sans Condensed",sans-serif;font-weight:700;font-size:12.5px;color:var(--green-2);line-height:1.15}
-  @media(max-width:520px){.prizes{grid-template-columns:1fr 1fr;max-width:320px}}
+  @media(max-width:520px){.prizes{gap:8px}}
 
   /* ---------- PAINEL FORM ---------- */
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-lg);overflow:hidden;position:relative;
@@ -405,9 +405,10 @@
     var target=avail.length<=4?(avail.length===1?4:avail.length*2):avail.length; order=[]; var k=0;
     while(order.length<target){ order.push(avail[k%avail.length]); k++; }
     SEG=360/order.length;
-    var stops=[]; for(var i=0;i<order.length;i++){ stops.push(((i%2===0)?COL_A:COL_B)+" "+(i*SEG)+"deg "+((i+1)*SEG)+"deg"); }
+    var g=1.0, stops=[];
+    for(var i=0;i<order.length;i++){ var c=(i%2===0)?COL_A:COL_B, a0=i*SEG, a1=(i+1)*SEG; stops.push("#ffffff "+a0+"deg "+(a0+g)+"deg"); stops.push(c+" "+(a0+g)+"deg "+a1+"deg"); }
     wheel.style.background="conic-gradient(from 0deg,"+stops.join(",")+")";
-    var size=wheel.clientWidth||360, d=size*0.31, nmF=Math.max(11,size*0.034), icF=Math.max(16,size*0.058);
+    var size=wheel.clientWidth||360, d=size*0.355, nmF=Math.max(11,size*0.032), icF=Math.max(15,size*0.052);
     for(var j=0;j<order.length;j++){
       var p=PRIZES[order[j]], mid=j*SEG+SEG/2;
       var el=document.createElement("div"); el.className="seg-label"; el.style.color=(j%2===0)?TXT_A:TXT_B;
@@ -458,13 +459,15 @@
     already.classList.add("show");
   }
   function verify(){
-    var d=cpfDigits();
+    var d=cpfDigits(), eEl=document.getElementById("err-cpf");
+    eEl.textContent="Informe um CPF válido.";
     if(!validCPF(d)){ setErr("cpf",true); return; }
     setErr("cpf",false);
     verif++; document.getElementById("admCount").textContent=verif;
     goBtn.disabled=true; goBtn.textContent="Verificando…";
     checkCPF(d).then(function(res){
       goBtn.disabled=false; goBtn.textContent="Verificar CPF";
+      if(res.error){ eEl.textContent="Não foi possível verificar o CPF. Confira a conexão e tente novamente."; setErr("cpf",true); return; }
       if(res.won){ showAlready(res.brinde); }
       else { openWheel(d, cpf.value); }
     });
